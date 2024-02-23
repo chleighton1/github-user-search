@@ -8,6 +8,10 @@ module.exports = {
   ],
   theme: {
     extend: {
+      gridTemplateColumns: {
+        // Simple 16 column grid
+        contact: "1fr 10fr",
+      },
       colors: {
         "bg-light": "#F6F8FF",
         "bg-dark": "#141D2F",

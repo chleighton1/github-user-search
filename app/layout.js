@@ -2,7 +2,10 @@ import { Space_Mono } from "next/font/google";
 import "./globals.css";
 import { Providers } from "./providers";
 
-const spaceMono = Space_Mono({ subsets: ["latin"], weight: ["400", "700"] });
+const spaceMono = Space_Mono({
+  subsets: ["latin"],
+  weight: ["400", "700"],
+});
 
 export const metadata = {
   title: "GitHub user search app",
