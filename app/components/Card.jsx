@@ -6,7 +6,7 @@ import { DateTime } from "luxon";
 export default function Card({ userData }) {
   return (
     <div className="bg-card-light dark:bg-card-dark shadow-lg px-5 py-3 rounded-xl">
-      <div className="flex justify-start gap-5 items-center mb-6 mt-6">
+      <div className="flex justify-start gap-5 items-center mb-8 mt-8">
         <img
           src={userData.avatar_url}
           alt="User avatar imgage"
@@ -24,7 +24,7 @@ export default function Card({ userData }) {
       </div>
 
       {userData.bio && <p className="mb-8">{userData.bio}</p>}
-      <section className="flex p-4 bg-bg-light dark:bg-bg-dark rounded-lg items-center justify-around text-center mb-8">
+      <section className="flex p-4 bg-bg-light dark:bg-bg-dark rounded-lg items-center justify-around text-center mt-8 mb-8">
         <div>
           <h3 className="text-sm mb-2">Repos</h3>
           <p className="text-card-dark dark:text-white text-lg font-bold">
@@ -44,7 +44,7 @@ export default function Card({ userData }) {
           </p>
         </div>
       </section>
-      <div className="grid dark:text-white grid-flow-row grid-cols-contact gap-2 grid-rows-4 mb-6">
+      <div className="grid dark:text-white grid-flow-row grid-cols-contact gap-x-1 gap-y-4 grid-rows-4 mb-8">
         <svg
           height="20"
           width="14"
