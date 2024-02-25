@@ -1,10 +1,6 @@
 "use client";
 
-import { React, useState } from "react";
-import IconLocation from "@/public/icon-location";
-import IconWebsite from "@/public/icon-website";
-import IconTwitter from "@/public/icon-twitter";
-import IconCompany from "@/public/icon-company";
+import { React } from "react";
 import { DateTime } from "luxon";
 
 export default function Card({ userData }) {
@@ -73,7 +69,11 @@ export default function Card({ userData }) {
           </g>
         </svg>
         <p className={userData.blog ? "" : "text-na"}>
-          {userData.blog ? userData.blog : "Not Available"}
+          {userData.blog ? (
+            <a href={userData.blog}>{userData.blog}</a>
+          ) : (
+            "Not Available"
+          )}
         </p>
 
         <svg

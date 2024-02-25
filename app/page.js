@@ -1,13 +1,14 @@
 "use client";
 
-import Image from "next/image";
 import Search from "./components/Search";
 import ThemeSwitch from "./components/ThemeSwitch";
 import Card from "./components/Card";
 import { React, useState } from "react";
 import { DateTime } from "luxon";
+import { getData } from "./lib/getData";
 
 export default function Home() {
+  const [error, setError] = useState(null);
   const [userData, setUserData] = useState({
     name: "The Octocat",
     avatar_url: "https://avatars.githubusercontent.com/u/583231?v=4",
@@ -19,19 +20,28 @@ export default function Home() {
     following: 9,
     location: "San Francisco",
     blog: "https://github.org",
-    twitter: "Not Available",
+    twitter: "",
     company: "@github",
   });
+
+  const handleClick = () => {
+    try {
+      getData("octocat", setUserData);
+      setError(null);
+    } catch (error) {
+      setError(error.message);
+    }
+  };
 
   return (
     <main className="p-6">
       <div className="flex justify-between mb-8">
         <h1 className="text-3xl text-card-dark dark:text-white font-medium">
-          devfinder
+          <button onClick={handleClick}>devfinder</button>
         </h1>
         <ThemeSwitch />
       </div>
-      <Search setUserData={setUserData} />
+      <Search setUserData={setUserData} setError={setError} error={error} />
       <Card userData={userData} />
     </main>
   );
