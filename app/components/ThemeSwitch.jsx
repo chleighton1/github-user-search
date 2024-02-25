@@ -25,7 +25,7 @@ const ThemeSwitch = () => {
           className="flex gap-2 text-white hover:text-tx-light justify-center items-center"
           onClick={() => setTheme("light")}
         >
-          <p className="text-xs tracking-wider">LIGHT</p>
+          <p className="text-xs tracking-widest">LIGHT</p>
           <IconSun className="fill-current" />
         </button>
       ) : (
@@ -33,7 +33,7 @@ const ThemeSwitch = () => {
           className="flex gap-2 text-tx-light hover:text-card-dark justify-center items-center"
           onClick={() => setTheme("dark")}
         >
-          <p className="text-xs tracking-wider">DARK</p>
+          <p className="text-xs tracking-widest">DARK</p>
           <IconMoon className="fill-current" />
         </button>
       )}
