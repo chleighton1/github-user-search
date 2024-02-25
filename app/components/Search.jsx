@@ -3,8 +3,9 @@
 import { React, useState } from "react";
 import IconSearch from "@/public/icon-search";
 import { getData } from "../lib/getData";
+import { DateTime } from "luxon";
 
-export default function Search(props) {
+export default function Search({ setUserData }) {
   const [user, setUser] = useState("");
 
   function handleChange(event) {
@@ -14,7 +15,20 @@ export default function Search(props) {
   async function handleSubmit(e) {
     e.preventDefault();
     const data = await getData(user);
-    console.log(data);
+    setUserData(() => ({
+      name: data.name,
+      avatar_url: data.avatar_url,
+      login: data.login,
+      joined: DateTime.fromISO(data.created_at),
+      bio: data.bio,
+      repos: data.public_repos,
+      followers: data.followers,
+      following: data.following,
+      location: data.location,
+      blog: data.blog,
+      twitter: data.twitter_username,
+      company: data.company,
+    }));
   }
 
   return (
