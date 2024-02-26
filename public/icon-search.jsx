@@ -1,7 +1,7 @@
 const IconSearch = () => {
   return (
     <svg
-      height="24"
+      height="25"
       width="25"
       fill="#0079FF"
       xmlns="http://www.w3.org/2000/svg"
