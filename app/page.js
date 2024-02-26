@@ -34,7 +34,7 @@ export default function Home() {
   };
 
   return (
-    <main className="p-6">
+    <main className="p-6 min-w-96 md:max-w-2xl mx-auto">
       <div className="flex justify-between mb-8">
         <h1 className="text-3xl text-card-dark dark:text-white font-medium">
           <button onClick={handleClick}>devfinder</button>
