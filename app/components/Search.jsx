@@ -10,10 +10,6 @@ export default function Search({ setUserData, error, setError }) {
     setUser(event.target.value);
   }
 
-<<<<<<< HEAD
-  // Submit function
-=======
->>>>>>> e684e118bc284183091cbc8328040f8eaaa6210c
   async function handleSubmit(e) {
     e.preventDefault();
     try {
