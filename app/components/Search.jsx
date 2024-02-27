@@ -43,7 +43,7 @@ export default function Search({ setUserData, error, setError }) {
           {error && (
             <p className="text-red-400 text-xs text-center mr-2">{error}</p>
           )}
-          <button className="px-4 py-2 md:px-8 md:py-3 text-sm md:text-lg bg-blue-all text-white rounded-lg ">
+          <button className="px-4 py-2 md:px-8 md:py-3 text-sm md:text-lg bg-blue-all hover:bg-blue-hover text-white rounded-lg ">
             Search
           </button>
         </form>
