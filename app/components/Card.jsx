@@ -5,15 +5,15 @@ import { DateTime } from "luxon";
 
 export default function Card({ userData }) {
   return (
-    <div className="bg-card-light dark:bg-card-dark shadow-lg px-5 py-3 md:px-10 md:py-6 rounded-xl">
-      <div className="flex justify-start gap-5 items-center mb-8 mt-8">
+    <div className="bg-card-light dark:bg-card-dark shadow-lg px-5 py-3 md:px-10 rounded-xl">
+      <div className="flex justify-start gap-5 md:gap-10 items-center mb-8 mt-8">
         <img
           src={userData.avatar_url}
           alt="User avatar imgage"
-          className="rounded-full h-28"
+          className="rounded-full h-28 md:h-32"
         />
-        <div>
-          <h1 className="text-card-dark dark:text-white text-lg">
+        <div className="flex flex-col md:gap-1">
+          <h1 className="text-card-dark dark:text-white text-lg md:text-3xl">
             {userData.name}
           </h1>
           <h3 className="text-md text-blue-all">{`@${userData.login}`}</h3>
@@ -26,20 +26,20 @@ export default function Card({ userData }) {
       {userData.bio && <p className="mb-8">{userData.bio}</p>}
       <section className="flex p-4 bg-bg-light dark:bg-bg-dark rounded-lg items-center justify-around text-center mt-8 mb-8">
         <div>
-          <h3 className="text-sm mb-2">Repos</h3>
-          <p className="text-card-dark dark:text-white text-lg font-bold">
+          <h3 className="text-sm md:text-base mb-2">Repos</h3>
+          <p className="text-card-dark dark:text-white text-lg md:text-xl font-bold">
             {userData.repos}
           </p>
         </div>
         <div>
-          <h3 className="text-sm mb-2">Followers</h3>
-          <p className="text-card-dark dark:text-white text-lg font-bold">
+          <h3 className="text-sm md:text-base mb-2">Followers</h3>
+          <p className="text-card-dark dark:text-white text-lg md:text-xl font-bold">
             {userData.followers}
           </p>
         </div>
         <div>
-          <h3 className="text-sm mb-2">Following</h3>
-          <p className="text-card-dark dark:text-white text-lg font-bold">
+          <h3 className="text-sm md:text-base mb-2">Following</h3>
+          <p className="text-card-dark dark:text-white text-lg md:text-xl font-bold">
             {userData.following}
           </p>
         </div>
@@ -49,7 +49,9 @@ export default function Card({ userData }) {
           <svg
             height="20"
             width="20"
-            className={`mr-4 ${userData.location ? "fill-current" : "fill-na"}`}
+            className={`mr-4 md:mr-2 min-w-6  ${
+              userData.location ? "fill-current" : "fill-na"
+            }`}
             xmlns="http://www.w3.org/2000/svg"
           >
             <path d="M12.797 3.425C11.584 1.33 9.427.05 7.03.002a7.483 7.483 0 00-.308 0C4.325.05 2.17 1.33.955 3.425a6.963 6.963 0 00-.09 6.88l4.959 9.077.007.012c.218.38.609.606 1.045.606.437 0 .828-.226 1.046-.606l.007-.012 4.96-9.077a6.963 6.963 0 00-.092-6.88zm-5.92 5.638c-1.552 0-2.813-1.262-2.813-2.813s1.261-2.812 2.812-2.812S9.69 4.699 9.69 6.25 8.427 9.063 6.876 9.063z" />
@@ -62,7 +64,9 @@ export default function Card({ userData }) {
           <svg
             height="20"
             width="20"
-            className={`mr-4 ${userData.blog ? "fill-current" : "fill-na"}`}
+            className={`mr-4 md:mr-2 min-w-6 ${
+              userData.blog ? "fill-current" : "fill-na"
+            }`}
             xmlns="http://www.w3.org/2000/svg"
           >
             <g>
@@ -72,7 +76,7 @@ export default function Card({ userData }) {
           </svg>
           <p className={userData.blog ? "" : "text-na"}>
             {userData.blog ? (
-              <a href={userData.blog}>{userData.blog}</a>
+              <a href={userData.blog}>Website</a>
             ) : (
               "Not Available"
             )}
@@ -82,7 +86,9 @@ export default function Card({ userData }) {
           <svg
             height="20"
             width="20"
-            className={`mr-4 ${userData.twitter ? "fill-current" : "fill-na"}`}
+            className={`mr-4 md:mr-2 min-w-6  ${
+              userData.twitter ? "fill-current" : "fill-na"
+            }`}
             xmlns="http://www.w3.org/2000/svg"
           >
             <path d="M20 2.799a8.549 8.549 0 01-2.363.647 4.077 4.077 0 001.804-2.266 8.194 8.194 0 01-2.6.993A4.099 4.099 0 009.75 4.977c0 .324.027.637.095.934-3.409-.166-6.425-1.8-8.452-4.288a4.128 4.128 0 00-.56 2.072c0 1.42.73 2.679 1.82 3.408A4.05 4.05 0 01.8 6.598v.045a4.119 4.119 0 003.285 4.028 4.092 4.092 0 01-1.075.135c-.263 0-.528-.015-.776-.07.531 1.624 2.038 2.818 3.831 2.857A8.239 8.239 0 01.981 15.34 7.68 7.68 0 010 15.285a11.543 11.543 0 006.29 1.84c7.545 0 11.67-6.25 11.67-11.667 0-.182-.006-.357-.015-.53A8.18 8.18 0 0020 2.798z" />
@@ -95,7 +101,9 @@ export default function Card({ userData }) {
           <svg
             height="20"
             width="20"
-            className={`mr-4 ${userData.company ? "fill-current" : "fill-na"}`}
+            className={`mr-4 md:mr-2 min-w-6  ${
+              userData.company ? "fill-current" : "fill-na"
+            }`}
             xmlns="http://www.w3.org/2000/svg"
           >
             <g>
