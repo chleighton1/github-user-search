@@ -14,7 +14,8 @@ export async function getData(username, setUserData) {
       },
     });
     console.log(res.status == 200);
-    if (res.status == 200) {
+    if (res.status == 200 && !Array.isArray(res.data)) {
+      console.log(res);
       setUserData(() => ({
         name: res.data.name,
         avatar_url: res.data.avatar_url,
