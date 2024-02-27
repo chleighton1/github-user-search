@@ -28,7 +28,7 @@ Users should be able to:
 
 ### Links
 
-- Live Site URL: [Link](https://github-user-search-mu-ten.vercel.app/)
+- Live Site URL: [Link](https://github-user-search-rho-ten.vercel.app/)
 
 ## My process
 
